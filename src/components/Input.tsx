@@ -22,7 +22,10 @@ export default function Input({
         {...rest}
       />
       {errors.map((error, index) => (
-        <span key={index} className="text-red-500 font-medium p-2">
+        <span
+          key={index}
+          className="text-red-500 font-medium px-2 py-1 flex flex-col text-sm"
+        >
           {error}
         </span>
       ))}

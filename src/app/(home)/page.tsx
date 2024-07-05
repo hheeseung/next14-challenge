@@ -14,19 +14,29 @@ export default function Home() {
         action={dispatch}
         className="flex flex-col justify-center space-y-4 w-96 mx-auto"
       >
-        <Input name="email" type="email" placeholder="📧 Email" />
-        <Input name="username" type="text" placeholder="🙍‍♂️ Username" />
+        <Input
+          name="email"
+          type="email"
+          placeholder="📧 Email"
+          errors={state?.errors?.fieldErrors.email}
+        />
+        <Input
+          name="username"
+          type="text"
+          placeholder="🙍‍♂️ Username"
+          errors={state?.errors?.fieldErrors.username}
+        />
         <Input
           name="password"
           type="password"
           placeholder="🔑 Password"
-          errors={state?.errors ?? []}
+          errors={state?.errors?.fieldErrors.password}
         />
         <Button text="Log In" />
       </form>
-      {state?.message && (
+      {state?.success && (
         <div className="bg-green-500 w-96 mx-auto mt-4 p-3 rounded-xl text-center">
-          ☑ {state.message}
+          ☑ Welcome!
         </div>
       )}
     </section>
