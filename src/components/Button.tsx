@@ -7,7 +7,7 @@ export default function Button({ text }: { text: string }) {
     <>
       <button
         disabled={pending}
-        className="bg-neutral-200 p-2 rounded-full font-medium hover:bg-neutral-300 hover:transition-colors disabled:bg-neutral-400 disabled:cursor-not-allowed"
+        className="bg-lime-600 text-white p-2 rounded-full font-medium hover:brightness-110 hover:transition-all disabled:cursor-not-allowed"
       >
         {pending ? "Loading..." : text}
       </button>
