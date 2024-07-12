@@ -83,6 +83,6 @@ export async function signup(prev: any, formData: FormData) {
     });
 
     await createSession(user);
-    redirect("/profile");
+    redirect("/");
   }
 }

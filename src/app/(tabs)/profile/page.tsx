@@ -39,13 +39,13 @@ export default async function Profile() {
     "use server";
     const session = await getSession();
     session.destroy();
-    redirect("/");
+    redirect("/landing");
   };
 
   return (
     <section className="text-center">
-      <div className="flex items-center justify-between p-5">
-        <h1 className="font-bold text-2xl">Profile</h1>
+      <div className="flex items-center justify-between p-6">
+        <h1 className="font-bold text-2xl">🐸 Profile</h1>
         <form action={logout}>
           <button className="text-sm text-lime-600 font-medium">
             로그아웃
