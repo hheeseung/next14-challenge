@@ -1,6 +1,8 @@
 import Tweets from "@/components/Tweets";
 import db from "@/lib/db";
 import { Prisma } from "@prisma/client";
+import { FaPen } from "react-icons/fa";
+import Link from "next/link";
 
 async function getInitialTweets() {
   const tweets = await db.tweet.findMany({
@@ -28,7 +30,12 @@ export default async function Home() {
 
   return (
     <section className="max-h-screen">
-      <h1 className="font-bold text-2xl p-6">🥑 Tweets</h1>
+      <div className="flex items-center justify-between p-6">
+        <h1 className="font-bold text-2xl">🥑 Tweets</h1>
+        <Link href="/tweets/add">
+          <FaPen className="hover:brightness-125 hover:scale-105 transition-all bg-lime-700 text-white size-9 p-2 rounded-xl shadow-md" />
+        </Link>
+      </div>
       <Tweets initialTweets={initialTweets} />
     </section>
   );
